@@ -1,8 +1,7 @@
 # 1. Как получить набор навыков
 # Поиск ваканси
 import requests
-import pprint
-import os
+
 
 # vacancy = 'NAME',input()
 # address = input()
@@ -26,7 +25,6 @@ result = requests.get(url, params=params).json()
 # список вакансий
 items = result['items']
 
-
 for item in items:
     url = item['url']
     result = requests.get(url).json()
@@ -43,5 +41,5 @@ for item in items:
 # 5ю Извлекаю из словоря и формирую в отдельный список
 for elem in key_skills:
     skills.append(elem.get('name', None))
-print(skills)
+print(skills) # Список всех ключевых навыков
 
